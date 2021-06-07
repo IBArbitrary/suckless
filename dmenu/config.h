@@ -4,13 +4,15 @@
 static int topbar = 0;                      /* -b  option; if 0, dmenu appears at bottom     */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
-	"monospace:size=9"
+	"monospace:style=Medium:size=9"
 };
 static const char *prompt      = ">";      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
 	[SchemeNorm] = { "#a89984", "#3c3836" },
 	[SchemeSel] = { "#282828", "#928374" },
+	[SchemeSelHighlight] = { "#fbf1c7", "#928374" },
+	[SchemeNormHighlight] = { "#fabd2f", "#3c3836" },
 	[SchemeOut] = { "#282828", "#ebdbb2" },
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */

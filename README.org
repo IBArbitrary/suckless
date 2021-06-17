@@ -7,3 +7,4 @@ patches applied:
 + [[https://tools.suckless.org/dmenu/patches/multi-selection/][multi-selection]] - buffers mulit-selection and waits until exit to return them,
   unlike the default behaviour of streaming selections immediately
 + [[https://tools.suckless.org/dmenu/patches/numbers/][numbers]] - shows number of matches/total number of options
++ [[https://tools.suckless.org/dmenu/patches/fuzzymatch/][fuzzymatch]] - fuzzy finding

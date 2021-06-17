@@ -12,3 +12,4 @@ patches applied:
 ** sxiv
 patches applied:
 + [[https://github.com/i-tsvetkov/sxiv-patches/blob/master/sxiv-square-thumbnails.patch][square-thumnails]] - square thumbnails for uniformity
++ [[https://github.com/muennich/sxiv/pull/392][bar-invert-color]] - provides flag for inverting bar color

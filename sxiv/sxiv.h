@@ -425,6 +425,8 @@ struct win {
 
 	XftColor bg;
 	XftColor fg;
+	XftColor sel_col;
+	XftColor mar_col;
 
 	suffixmode_t suffixmode;
 	const char   *prefix;

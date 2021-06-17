@@ -410,7 +410,7 @@ void update_info(void)
 			}
 #endif /* HAVE_LIBCURL */
 		}
-		bar_put(r, "%s%0*d/%d", mark, fw, fileidx + 1, filecnt);
+		bar_put(r, "%s%d %0*d/%d", mark, markcnt, fw, fileidx + 1, filecnt);
 	} else {
 		bar_put(r, "%s", mark);
 		if (img.ss.on) {

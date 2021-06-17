@@ -19,6 +19,7 @@ patches applied:
 + [[https://github.com/explosion-mental/sxiv/blob/main/patches/rectangle_mark.patch][rectangle-mark]] - rectangular mark for marked files, instead of the tiny-winy
   itsy-bitsy square originally used
 + [[https://github.com/muennich/sxiv/pull/440][svg]] - support for svg files, including vector zooming
++ [[https://github.com/muennich/sxiv/pull/446][fill-mode]] - fill mode for viewing image
 ** sent
 patches applied:
 + [[https://tools.suckless.org/sent/patches/progress-bar/][progress-bar]] - progress bar for the finicky people

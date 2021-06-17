@@ -1,0 +1,9 @@
+* ibarbitrary's suckless builds
+highly opinionated gruvbox builds of some suckless philosophy tools
+** dmenu
+patches applied:
++ [[https://tools.suckless.org/dmenu/patches/xyw/][xyw]] - for specifying dimensions and position
++ [[https://tools.suckless.org/dmenu/patches/highlight/][highlight]] - highlights matching input
++ [[https://tools.suckless.org/dmenu/patches/multi-selection/][multi-selection]] - buffers mulit-selection and waits until exit to return them,
+  unlike the default behaviour of streaming selections immediately
++ [[https://tools.suckless.org/dmenu/patches/numbers/][numbers]] - shows number of matches/total number of options

@@ -112,6 +112,7 @@ static const keymap_t keys[] = {
 	{ ControlMask,  XK_n,             i_navigate_frame,     +1 },
 	{ ControlMask,  XK_p,             i_navigate_frame,     -1 },
 	{ ControlMask,  XK_space,         i_toggle_animation,   None },
+    { ControlMask,  XK_c,             i_toggle_mouse_pos,   None },
 	{ 0,            XK_h,             i_scroll,             DIR_LEFT },
 	{ 0,            XK_Left,          i_scroll,             DIR_LEFT },
 	{ 0,            XK_j,             i_scroll,             DIR_DOWN },

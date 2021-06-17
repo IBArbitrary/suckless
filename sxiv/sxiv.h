@@ -222,6 +222,7 @@ struct img {
 	bool dirty;
 	bool aa;
 	bool alpha;
+	bool show_mouse_pos;
 
 	Imlib_Color_Modifier cmod;
 	int gamma;
@@ -271,6 +272,7 @@ struct opt {
 	bool animate;
 	int gamma;
 	int slideshow;
+	bool show_mouse_pos;
 	int framerate;
 
 	/* window: */
@@ -428,6 +430,10 @@ struct win {
 		win_bar_t l;
 		win_bar_t r;
 	} bar;
+	struct {
+		int x;
+		int y;
+	} mouse;
 };
 
 extern Atom atoms[ATOM_COUNT];
@@ -440,6 +446,7 @@ void win_toggle_fullscreen(win_t*);
 void win_toggle_bar(win_t*);
 void win_clear(win_t*);
 void win_draw(win_t*);
+void win_draw_bar(win_t*);
 void win_draw_rect(win_t*, int, int, int, int, bool, int, unsigned long);
 void win_set_title(win_t*, const char*);
 void win_set_cursor(win_t*, cursor_t);

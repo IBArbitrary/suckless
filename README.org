@@ -14,3 +14,7 @@ patches applied:
 + [[https://github.com/i-tsvetkov/sxiv-patches/blob/master/sxiv-square-thumbnails.patch][square-thumnails]] - square thumbnails for uniformity
 + [[https://github.com/muennich/sxiv/pull/392][bar-invert-color]] - provides flag for inverting bar color
 + [[https://github.com/0ion9/sxiv/commit/da0b8259f10307f4868d8a47078d3032c1562ca4][mouse-coordinates]] - toggle-able mouse-coordinates in bar
+** sent
+patches applied:
++ [[https://tools.suckless.org/sent/patches/progress-bar/][progress-bar]] - progress bar for the finicky people
++ [[https://tools.suckless.org/sent/patches/inverted-colors/][inverted-colors]] - just in case someone asks for the blasphemous light mode

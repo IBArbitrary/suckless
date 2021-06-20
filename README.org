@@ -25,3 +25,4 @@ patches applied:
 + [[https://tools.suckless.org/sent/patches/progress-bar/][progress-bar]] - progress bar for the finicky people
 + [[https://tools.suckless.org/sent/patches/inverted-colors/][inverted-colors]] - just in case someone asks for the blasphemous light mode
 + [[https://tools.suckless.org/sent/patches/toggle-scm/][toggle-inverted]] - toggle for inverted colorscheme
++ [[https://tools.suckless.org/sent/patches/cmdline_options/][cmdline-colors]] - specify colors from commandline

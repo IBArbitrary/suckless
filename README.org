@@ -26,3 +26,6 @@ patches applied:
 + [[https://tools.suckless.org/sent/patches/inverted-colors/][inverted-colors]] - just in case someone asks for the blasphemous light mode
 + [[https://tools.suckless.org/sent/patches/toggle-scm/][toggle-inverted]] - toggle for inverted colorscheme
 + [[https://tools.suckless.org/sent/patches/cmdline_options/][cmdline-colors]] - specify colors from commandline
+** st
+patches applied:
++ [[https://st.suckless.org/patches/invert/st-invert-0.8.4.diff][invert]] - inverts the colorscheme

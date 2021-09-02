@@ -31,3 +31,6 @@ patches applied:
 + [[https://st.suckless.org/patches/invert/st-invert-0.8.4.diff][invert]] - inverts the colorscheme
 + [[https://st.suckless.org/patches/scrollback/][scrollback]] - added the scrollback patch (the entirety)
 + [[https://st.suckless.org/patches/boxdraw/][boxdraw]] - perfect rendering of box and other characters
+** tabbed
+patches applied:
++ [[https://tools.suckless.org/tabbed/patches/clientnumber/][clientnumber]] - shows the index of tabs in the tab-bar

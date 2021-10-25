@@ -11,6 +11,7 @@ patches applied:
 + [[https://tools.suckless.org/dmenu/patches/mouse-support/][mouse-support]] - mouse support for various actions
 + [[https://tools.suckless.org/dmenu/patches/printindex/][print-index]] - returns the index of entry in list rather than the entry itself.
   useful when using two lists, one for indexing one for returning.
++ [[https://tools.suckless.org/dmenu/patches/no-sort/][no-sort]] - does not sort the list at all.
 ** sxiv
 patches applied:
 + [[https://github.com/i-tsvetkov/sxiv-patches/blob/master/sxiv-square-thumbnails.patch][square-thumnails]] - square thumbnails for uniformity

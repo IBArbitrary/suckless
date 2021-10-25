@@ -54,6 +54,7 @@ static struct item *items = NULL;
 static struct item *matches, *matchend;
 static struct item *prev, *curr, *next, *sel;
 static int mon = -1, screen;
+static int print_index = 0;
 
 static int *selid = NULL;
 static unsigned int selidsize = 0;
@@ -647,10 +648,10 @@ insert:
 			for (int i = 0;i < selidsize;i++)
 				if (selid[i] != -1 && (!sel || sel->id != selid[i]))
 					puts(items[selid[i]].text);
-			if (sel && !(ev->state & ShiftMask))
-				puts(sel->text);
+			if (print_index)
+				printf("%d\n", (sel && !(ev->state & ShiftMask)) ? sel->id : -1);
 			else
-				puts(text);
+				puts((sel && !(ev->state & ShiftMask)) ? sel->text : text);
 			cleanup();
 			exit(0);
 		}
@@ -831,6 +832,7 @@ readstdin(void)
 		if (!(items[i].text = strdup(buf)))
 			die("cannot strdup %u bytes:", strlen(buf) + 1);
 		items[i].id = i; /* for multiselect */
+		// items[i].index = i;
 		drw_font_getexts(drw->fonts, buf, strlen(buf), &tmpmax, NULL);
 		if (tmpmax > inputw) {
 			inputw = tmpmax;
@@ -1015,7 +1017,9 @@ main(int argc, char *argv[])
 		else if (!strcmp(argv[i], "-i")) { /* case-insensitive item matching */
 			fstrncmp = strncasecmp;
 			fstrstr = cistrstr;
-		} else if (i + 1 == argc)
+		} else if (!strcmp(argv[i], "-ix"))  /* adds ability to return index in list */
+			print_index = 1;
+		else if (i + 1 == argc)
 			usage();
 		/* these options take one argument */
 		else if (!strcmp(argv[i], "-l"))   /* number of lines in vertical list */

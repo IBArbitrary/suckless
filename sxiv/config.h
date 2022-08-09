@@ -17,7 +17,7 @@ enum {
 /* levels (in percent) to use when zooming via '-' and '+':
  * (first/last value is used as min/max zoom level)
  */
-static const char * const MARK_COLOR   = "#FF0000";
+static const char * const MARK_COLOR   = "#fb4934";
 static const float zoom_levels[] = {
 	 12.5,  25.0,  50.0,  75.0,
 	100.0, 150.0, 200.0, 400.0, 800.0
@@ -57,7 +57,7 @@ enum {
 #ifdef _THUMBS_CONFIG
 
 /* thumbnail sizes in pixels (width == height): */
-static const int thumb_sizes[] = { 32, 64, 96, 128, 160, 256};
+static const int thumb_sizes[] = { 32, 64, 96, 128, 160, 256, 512};
 
 /* thumbnail size at startup, index into thumb_sizes[]: */
 static const int THUMB_SIZE = 3;

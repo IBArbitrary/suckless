@@ -13,14 +13,16 @@ static const char after[]       = ">";
 static const char titletrim[]   = "…";
 static const int  tabwidth      = 200;
 static const Bool foreground    = True;
-static       Bool urgentswitch  = False;
+static       Bool urgentswitch  = True;
+static const int  separator		= 2;
+static const int  barHeight		= 20;
 
 /*
  * Where to place a new tab when it is opened. When npisrelative is True,
  * then the current position is changed + newposition. If npisrelative
  * is False, then newposition is an absolute position.
  */
-static int  newposition   = 0;
+static int  newposition   = -1;
 static Bool npisrelative  = False;
 
 #define SETPROP(p) { \

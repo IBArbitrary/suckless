@@ -37,6 +37,9 @@ patches applied:
 ** tabbed
 patches applied:
 + [[https://tools.suckless.org/tabbed/patches/clientnumber/][clientnumber]] - shows the index of tabs in the tab-bar
++ [[https://tools.suckless.org/tabbed/patches/drag/][drag]] - enables mouse dragging in the tab-bar
++ [[https://tools.suckless.org/tabbed/patches/separator/][separator]] - adds tab separator in the tab-bar
++ [[https://tools.suckless.org/tabbed/patches/bar-height/][bar-height]] - specify bar height manually
 ** surf
 patches applied:
 + [[https://surf.suckless.org/patches/homepage/][homepage]] - shows default homepage for new windows

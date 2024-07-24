@@ -8,6 +8,9 @@ static const char* selbgcolor   = "#555555";
 static const char* selfgcolor   = "#ffffff";
 static const char* urgbgcolor   = "#111111";
 static const char* urgfgcolor   = "#cc0000";
+static const char* normsepcolor = "#a89984";
+static const char* selsepcolor  = "#d5c4a1";
+static const char* linecolor	= "#a89984";
 static const char before[]      = "<";
 static const char after[]       = ">";
 static const char titletrim[]   = "...";
@@ -16,6 +19,7 @@ static const Bool foreground    = True;
 static       Bool urgentswitch  = False;
 static const int  separator		= 4;
 static const int  barHeight		= 24;
+static const int  barLineWidth	= 10;
 
 /*
  * Where to place a new tab when it is opened. When npisrelative is True,

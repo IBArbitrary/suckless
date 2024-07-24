@@ -2,12 +2,15 @@
 
 /* appearance */
 static const char font[]        = "monospace:size=10";
-static const char* normbgcolor  = "#3c3836";
-static const char* normfgcolor  = "#a89984";
+static const char* normbgcolor  = "#504945";
+static const char* normfgcolor  = "#d5c4a1";
 static const char* selbgcolor   = "#d5c4a1";
 static const char* selfgcolor   = "#282828";
 static const char* urgbgcolor   = "#fabd2f";
 static const char* urgfgcolor   = "#282828";
+static const char* normsepcolor = "#7c6f64";
+static const char* selsepcolor  = "#d5c4a1";
+static const char* linecolor 	= "#504945";
 static const char before[]      = "<";
 static const char after[]       = ">";
 static const char titletrim[]   = "…";
@@ -16,6 +19,7 @@ static const Bool foreground    = True;
 static       Bool urgentswitch  = True;
 static const int  separator		= 2;
 static const int  barHeight		= 20;
+static const int  barLineWidth	= 0;
 
 /*
  * Where to place a new tab when it is opened. When npisrelative is True,

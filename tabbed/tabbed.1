@@ -18,6 +18,12 @@ tabbed \- generic tabbed interface
 .IR normbgcol ]
 .RB [ \-O
 .IR normfgcol ]
+.RB [ \-l
+.IR normsepcol ]
+.RB [ \-L
+.IR selsepcol ]
+.RB [ \-b
+.IR linecolor ]
 .RB [ \-t
 .IR selbgcol ]
 .RB [ \-T
@@ -105,6 +111,15 @@ defines the urgent background color.
 .TP
 .BI \-U " urgfgbcol"
 defines the urgent foreground color.
+.TP
+.BI \-l " normsepcol"
+defines the normal separator color.
+.TP
+.BI \-L " selsepcol"
+defines the selected separator color.
+.TP
+.BI \-b " linecolor"
+defines the tab-bar line color.
 .TP
 .B \-v
 prints version information to stderr, then exits.

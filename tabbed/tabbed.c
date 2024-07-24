@@ -47,7 +47,7 @@
 #define CLEANMASK(mask)         (mask & ~(numlockmask | LockMask))
 #define TEXTW(x)                (textnw(x, strlen(x)) + dc.font.height)
 
-enum { ColFG, ColBG, ColLast };       /* color */
+enum { ColFG, ColBG, ColSeparator, ColLine, ColLast };       /* color */
 enum { WMProtocols, WMDelete, WMName, WMState, WMFullscreen,
        XEmbed, WMSelectTab, WMLast }; /* default atoms */
 
@@ -154,7 +154,7 @@ static void (*handler[LASTEvent]) (const XEvent *) = {
 	[PropertyNotify] = propertynotify,
 	[MotionNotify] = motionnotify,
 };
-static int bh, obh, wx, wy, ww, wh;
+static int bh, obh, wx, wy, ww, wh, bl;
 static unsigned int numlockmask;
 static Bool running = True, nextfocus, doinitspawn = True,
             fillagain = False, closelastclient = False,
@@ -411,7 +411,11 @@ drawbar(void)
 		dc.x += dc.w;
 		clients[c]->tabx = dc.x;
 	}
-	XCopyArea(dpy, dc.drawable, win, dc.gc, 0, 0, ww, bh, 0, 0);
+
+	XSetForeground(dpy, dc.gc, dc.norm[ColLine].pixel);
+	XFillRectangle(dpy, dc.drawable, dc.gc, 0, bh, ww, bl);
+
+	XCopyArea(dpy, dc.drawable, win, dc.gc, 0, 0, ww, bh+bl, 0, 0);
 	XSync(dpy, False);
 }
 
@@ -425,7 +429,7 @@ drawtext(const char *text, XftColor col[ColLast])
 	XRectangle sep = { dc.x, dc.y, separator, dc.h };
 	
 	if (separator) {
-		XSetForeground(dpy, dc.gc, col[ColFG].pixel);
+		XSetForeground(dpy, dc.gc, col[ColSeparator].pixel);
 		XFillRectangles(dpy, dc.drawable, dc.gc, &sep, 1);
 	}
 
@@ -510,7 +514,7 @@ focus(int c)
 	if (c < 0 || c >= nclients)
 		return;
 
-	resize(c, ww, wh - bh);
+	resize(c, ww, wh - bh - bl);
 	XRaiseWindow(dpy, clients[c]->win);
 	XSetInputFocus(dpy, clients[c]->win, RevertToParent, CurrentTime);
 	sendxembed(c, XEMBED_FOCUS_IN, XEMBED_FOCUS_CURRENT, 0, 0);
@@ -928,7 +932,7 @@ resize(int c, int w, int h)
 	XWindowChanges wc;
 
 	ce.x = 0;
-	ce.y = wc.y = bh;
+	ce.y = wc.y = bh + bl;
 	ce.width = wc.width = w;
 	ce.height = wc.height = h;
 	ce.type = ConfigureNotify;
@@ -1032,6 +1036,7 @@ setup(void)
 	root = RootWindow(dpy, screen);
 	initfont(font);
 	bh = dc.h = barHeight;
+	bl = barLineWidth;
 
 	/* init atoms */
 	wmatom[WMDelete] = XInternAtom(dpy, "WM_DELETE_WINDOW", False);
@@ -1079,10 +1084,14 @@ setup(void)
 
 	dc.norm[ColBG] = getcolor(normbgcolor);
 	dc.norm[ColFG] = getcolor(normfgcolor);
+	dc.norm[ColSeparator] = getcolor(normsepcolor);
+	dc.norm[ColLine] = getcolor(linecolor);
 	dc.sel[ColBG] = getcolor(selbgcolor);
 	dc.sel[ColFG] = getcolor(selfgcolor);
+	dc.sel[ColSeparator] = getcolor(selsepcolor);
 	dc.urg[ColBG] = getcolor(urgbgcolor);
 	dc.urg[ColFG] = getcolor(urgfgcolor);
+	dc.urg[ColSeparator] = getcolor(normsepcolor);
 	dc.drawable = XCreatePixmap(dpy, root, ww, wh,
 	                            DefaultDepth(dpy, screen));
 	dc.gc = XCreateGC(dpy, root, 0, 0);
@@ -1352,6 +1361,15 @@ main(int argc, char *argv[])
 		break;
 	case 'o':
 		normbgcolor = EARGF(usage());
+		break;
+	case 'l':
+		normsepcolor = EARGF(usage());
+		break;
+	case 'L':
+		selsepcolor = EARGF(usage());
+		break;
+	case 'b':
+		linecolor = EARGF(usage());
 		break;
 	case 'p':
 		pstr = EARGF(usage());

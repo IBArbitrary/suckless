@@ -4,7 +4,7 @@
 static int topbar = 0; /* -b  option; if 0, dmenu appears at bottom     */
 static int fuzzy = 1;
 /* -fn option overrides fonts[0]; default X11 font or font set */
-static const char *fonts[] = {"monospace:style=Medium:size=9"};
+static const char *fonts[] = {"monospace:style=Medium:size=10"};
 static const char *prompt =
     ">"; /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {

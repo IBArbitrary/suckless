@@ -44,3 +44,4 @@ patches applied:
 ** surf
 patches applied:
 + [[https://surf.suckless.org/patches/homepage/][homepage]] - shows default homepage for new windows
+** wjt
